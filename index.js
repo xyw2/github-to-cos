@@ -54,10 +54,17 @@ async function initConfig() {
             })
         }
     }
+    
+
 
     if (scripts.length === 0) {
         console.log('脚本列表为空')
         return false
+    }
+    
+    for (let item of scripts) {
+        console.log('输出脚本列表')
+        console.log(item)
     }
 
     return true
