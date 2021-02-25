@@ -38,7 +38,9 @@ async function initConfig() {
     }
 
     // 映射脚本路径
+    console.log('输出脚本列表')
     for (let item of gallyJson) {
+        console.log(item)
         let json = item.json
         let boxJson = await restFile(json)
 
@@ -62,10 +64,7 @@ async function initConfig() {
         return false
     }
     
-    for (let item of scripts) {
-        console.log('输出脚本列表')
-        console.log(item)
-    }
+
 
     return true
 }
