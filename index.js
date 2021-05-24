@@ -49,7 +49,6 @@ async function initConfig() {
         }
 
         for (let task of boxJson.task) {
-            console.log("task=");
             console.log(task);
             let script = task.match(/.*\/(.+?\.js)/)[1];
             console.log(script)
