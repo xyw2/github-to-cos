@@ -43,7 +43,7 @@ async function initConfig() {
     for (let item of gallyJson) {
         let json = item.json
         let boxJson = await restFile(json)
-
+        console.log(boxJson)
         if (!boxJson.task) {
             continue
         }
