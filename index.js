@@ -43,7 +43,7 @@ async function initConfig() {
     for (let item of gallyJson) {
         let json = item.json
         let boxJson = await restFile(json)
-        console.log(boxJson)
+        //console.log(boxJson)
         if (!boxJson.task) {
             continue
         }
@@ -53,7 +53,8 @@ async function initConfig() {
             let script = task.match(/.*\/(.+?\.js)/)[1];
             scripts.push({
                 key: script,
-                value: `${item.cdn}/${script}`
+                //value: `${item.cdn}/${script}`
+                value: script
             })
         }
     }
