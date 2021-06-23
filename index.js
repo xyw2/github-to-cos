@@ -9,9 +9,9 @@ var SECRET_KEY = ''
 var scripts = []
 
 var gallyJson = [{
-    json: "https://raw.githubusercontent.com/shufflewzc/faker/main/qx.json"
-    //json: "https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301_gallery.json"
-    //cdn: "https://jdsharedresourcescdn.azureedge.net/jdresource"
+    //json: "https://raw.githubusercontent.com/shufflewzc/faker/main/qx.json"
+    json: "https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301_gallery.json",
+    cdn: "https://jdsharedresourcescdn.azureedge.net/jdresource"
 }]
 
 
@@ -49,12 +49,12 @@ async function initConfig() {
         }
 
         for (let task of boxJson.task) {
-            console.log(task);
-            let script = task.match(/.*\/(.+?\.js)/)[1];
+            console.log(task.config);
+            let script = task.config.match(/.*\/(.+?\.js)/)[1];
             scripts.push({
                 key: script,
-                //value: `${item.cdn}/${script}`
-                value: script
+                value: `${item.cdn}/${script}`
+                //value: script
             })
         }
     }
